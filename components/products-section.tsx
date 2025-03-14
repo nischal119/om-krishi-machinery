@@ -1,16 +1,28 @@
 // Remove parallax effects but keep other animations
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Check, Star } from "lucide-react"
-import { toast } from "react-toastify"
-import { productData } from "@/lib/product-data"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Check, Star } from "lucide-react";
+import { toast } from "react-toastify";
+import { productData } from "@/lib/product-data";
+import { motion } from "framer-motion";
 
 // Group products by category
 const productCategories = [
@@ -34,15 +46,17 @@ const productCategories = [
     name: "Solar Products",
     products: productData.filter((p) => p.category === "solar"),
   },
-]
+];
 
 export default function ProductsSection() {
-  const [selectedProduct, setSelectedProduct] = useState<(typeof productData)[0] | null>(null)
+  const [selectedProduct, setSelectedProduct] = useState<
+    (typeof productData)[0] | null
+  >(null);
 
   const handleViewDetails = (product: any) => {
-    setSelectedProduct(product)
-    toast.info(`Viewing details for ${product.name}`)
-  }
+    setSelectedProduct(product);
+    toast.info(`Viewing details for ${product.name}`);
+  };
 
   return (
     <section id="products" className="section-padding">
@@ -57,7 +71,8 @@ export default function ProductsSection() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore our wide range of high-quality agricultural machinery and tools
+            Explore our wide range of high-quality agricultural machinery and
+            tools
           </p>
         </motion.div>
 
@@ -92,28 +107,37 @@ export default function ProductsSection() {
                     <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 h-full">
                       <div className="relative h-[200px]">
                         {" "}
-                        {/* Increased height and made it consistent */}
                         <img
                           src={product.image || "/placeholder.svg"}
                           alt={product.name}
                           className="w-full h-full object-contain p-4" // Changed to object-contain and added padding
                         />
                         {product.isNew && (
-                          <Badge className="absolute top-2 right-2" variant="default">
+                          <Badge
+                            className="absolute top-2 right-2"
+                            variant="default"
+                          >
                             New
                           </Badge>
                         )}
                         {product.isPopular && !product.isNew && (
-                          <Badge className="absolute top-2 right-2" variant="secondary">
+                          <Badge
+                            className="absolute top-2 right-2"
+                            variant="secondary"
+                          >
                             Popular
                           </Badge>
                         )}
                       </div>
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-lg">{product.name}</CardTitle>
+                        <CardTitle className="text-lg">
+                          {product.name}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="pb-2">
-                        <p className="font-semibold text-primary">{product.price}</p>
+                        <p className="font-semibold text-primary">
+                          {product.price}
+                        </p>
                       </CardContent>
                       <CardFooter>
                         <Button
@@ -139,11 +163,15 @@ export default function ProductsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-lg font-medium mb-6">And many more products with all spare parts & reasonable pricing</p>
+          <p className="text-lg font-medium mb-6">
+            And many more products with all spare parts & reasonable pricing
+          </p>
           <Button
             size="lg"
             onClick={() => {
-              toast.success("Our complete product catalog will be available soon!")
+              toast.success(
+                "Our complete product catalog will be available soon!"
+              );
             }}
           >
             View All Products
@@ -152,13 +180,20 @@ export default function ProductsSection() {
       </div>
 
       {/* Product Details Dialog */}
-      <Dialog open={selectedProduct !== null} onOpenChange={() => setSelectedProduct(null)}>
+      <Dialog
+        open={selectedProduct !== null}
+        onOpenChange={() => setSelectedProduct(null)}
+      >
         <DialogContent className="sm:max-w-[600px]">
           {selectedProduct && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl">{selectedProduct.name}</DialogTitle>
-                <DialogDescription className="text-lg mt-2">{selectedProduct.description}</DialogDescription>
+                <DialogTitle className="text-2xl">
+                  {selectedProduct.name}
+                </DialogTitle>
+                <DialogDescription className="text-lg mt-2">
+                  {selectedProduct.description}
+                </DialogDescription>
               </DialogHeader>
 
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -168,16 +203,23 @@ export default function ProductsSection() {
                     alt={selectedProduct.name}
                     className="w-full h-auto rounded-md"
                   />
-                  <p className="text-xl font-bold text-primary mt-4">{selectedProduct.price}</p>
+                  <p className="text-xl font-bold text-primary mt-4">
+                    {selectedProduct.price}
+                  </p>
                   <div className="flex items-center mt-2">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`h-4 w-4 ${i < Math.floor(selectedProduct.rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                        className={`h-4 w-4 ${
+                          i < Math.floor(selectedProduct.rating)
+                            ? "text-yellow-400 fill-yellow-400"
+                            : "text-gray-300"
+                        }`}
                       />
                     ))}
                     <span className="text-sm text-muted-foreground ml-2">
-                      {selectedProduct.rating} ({selectedProduct.reviews} reviews)
+                      {selectedProduct.rating} ({selectedProduct.reviews}{" "}
+                      reviews)
                     </span>
                   </div>
                 </div>
@@ -198,12 +240,16 @@ export default function ProductsSection() {
                   <div>
                     <h3 className="font-semibold mb-2">Specifications:</h3>
                     <div className="space-y-1">
-                      {Object.entries(selectedProduct.specifications).map(([key, value], i) => (
-                        <div key={i} className="grid grid-cols-2 text-sm">
-                          <span className="text-muted-foreground">{key}:</span>
-                          <span>{value}</span>
-                        </div>
-                      ))}
+                      {Object.entries(selectedProduct.specifications).map(
+                        ([key, value], i) => (
+                          <div key={i} className="grid grid-cols-2 text-sm">
+                            <span className="text-muted-foreground">
+                              {key}:
+                            </span>
+                            <span>{value}</span>
+                          </div>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
@@ -212,8 +258,10 @@ export default function ProductsSection() {
               <div className="mt-6 flex justify-end">
                 <Button
                   onClick={() => {
-                    setSelectedProduct(null)
-                    toast.success(`Your inquiry about ${selectedProduct.name} has been sent. We'll contact you soon.`)
+                    setSelectedProduct(null);
+                    toast.success(
+                      `Your inquiry about ${selectedProduct.name} has been sent. We'll contact you soon.`
+                    );
                   }}
                 >
                   Request Quote
@@ -224,6 +272,5 @@ export default function ProductsSection() {
         </DialogContent>
       </Dialog>
     </section>
-  )
+  );
 }
-

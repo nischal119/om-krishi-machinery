@@ -1,60 +1,94 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { ArrowRight } from "lucide-react"
-import { toast } from "react-toastify"
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { ArrowRight } from "lucide-react";
+import { toast } from "react-toastify";
 
 const categories = [
   {
     name: "Agricultural Tools",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/electric%20grass%20cutter-UVCJ5luhI8pCWH18pV08lj9T6Nf0oZ.png",
+    image: "/electric grass cutter.png",
     count: 45,
     color: "from-green-900/80 to-green-700/80",
-    description: "Complete range of agricultural machinery and tools for modern farming needs.",
-    items: ["Power Tillers", "Grass Cutters", "Spraying Equipment", "Harvesting Tools", "Irrigation Systems"],
+    description:
+      "Complete range of agricultural machinery and tools for modern farming needs.",
+    items: [
+      "Power Tillers",
+      "Grass Cutters",
+      "Spraying Equipment",
+      "Harvesting Tools",
+      "Irrigation Systems",
+    ],
   },
   {
     name: "Carpentry Tools",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Router-TRqJOHKIXP4QV2BgkSDSI5VuoEB9Ki.png",
+    image: "/Router.png",
     count: 32,
     color: "from-amber-900/80 to-amber-700/80",
-    description: "Professional-grade carpentry tools for precision woodworking.",
-    items: ["Wood Routers", "Power Planers", "Electric Drills", "Sanders", "Saw Machines"],
+    description:
+      "Professional-grade carpentry tools for precision woodworking.",
+    items: [
+      "Wood Routers",
+      "Power Planers",
+      "Electric Drills",
+      "Sanders",
+      "Saw Machines",
+    ],
   },
   {
     name: "Plumbing & Irrigation",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/irrigation-g6pAHyFQa8rPfAKj9n9PUkEKF45M8V.png",
+    image: "/sprinkler.png",
     count: 28,
     color: "from-blue-900/80 to-blue-700/80",
-    description: "Complete plumbing solutions and irrigation systems for agriculture.",
-    items: ["Water Pumps", "Pipe Systems", "Sprinklers", "Drip Irrigation Kits", "Plumbing Tools"],
+    description:
+      "Complete plumbing solutions and irrigation systems for agriculture.",
+    items: [
+      "Water Pumps",
+      "Pipe Systems",
+      "Sprinklers",
+      "Drip Irrigation Kits",
+      "Plumbing Tools",
+    ],
   },
   {
     name: "Construction Tools",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/marble%20cutter.jpg-Uk6wVFE1CvKliEOiktV3h5NTlylt21.jpeg",
+    image: "/marble cutter.jpg",
     count: 19,
     color: "from-yellow-900/80 to-yellow-700/80",
     description: "Heavy-duty construction tools for professional use.",
-    items: ["Marble Cutters", "Concrete Tools", "Measuring Equipment", "Safety Gear", "Power Tools"],
+    items: [
+      "Marble Cutters",
+      "Concrete Tools",
+      "Measuring Equipment",
+      "Safety Gear",
+      "Power Tools",
+    ],
   },
-]
+];
 
 export default function ProductCategories() {
-  const [selectedCategory, setSelectedCategory] = useState<number | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
 
   return (
     <section id="products" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Product Categories</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Our Product Categories
+          </h2>
           <div className="h-1 w-24 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We offer a wide range of high-quality products to meet all your agricultural and construction needs
+            We offer a wide range of high-quality products to meet all your
+            agricultural and construction needs
           </p>
         </div>
 
@@ -71,11 +105,17 @@ export default function ProductCategories() {
                   alt={category.name}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t ${category.color}`}></div>
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t ${category.color}`}
+                ></div>
 
                 <CardContent className="relative z-10 h-full flex flex-col justify-end p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{category.name}</h3>
-                  <p className="text-white/80 mb-4">{category.count} products</p>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {category.name}
+                  </h3>
+                  <p className="text-white/80 mb-4">
+                    {category.count} products
+                  </p>
                   <Button
                     variant="outline"
                     className="w-full bg-white/10 text-white border-white/20 hover:bg-white/20 group-hover:bg-primary group-hover:border-primary transition-colors"
@@ -90,12 +130,17 @@ export default function ProductCategories() {
         </div>
       </div>
 
-      <Dialog open={selectedCategory !== null} onOpenChange={() => setSelectedCategory(null)}>
+      <Dialog
+        open={selectedCategory !== null}
+        onOpenChange={() => setSelectedCategory(null)}
+      >
         <DialogContent className="sm:max-w-[600px]">
           {selectedCategory !== null && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl">{categories[selectedCategory].name}</DialogTitle>
+                <DialogTitle className="text-2xl">
+                  {categories[selectedCategory].name}
+                </DialogTitle>
                 <DialogDescription className="text-lg mt-2">
                   {categories[selectedCategory].description}
                 </DialogDescription>
@@ -103,7 +148,9 @@ export default function ProductCategories() {
               <div className="mt-4">
                 <div className="mb-6">
                   <img
-                    src={categories[selectedCategory].image || "/placeholder.svg"}
+                    src={
+                      categories[selectedCategory].image || "/placeholder.svg"
+                    }
                     alt={categories[selectedCategory].name}
                     className="w-full h-48 object-cover rounded-md"
                   />
@@ -119,17 +166,20 @@ export default function ProductCategories() {
                 </ul>
                 <div className="mt-6">
                   <p className="text-muted-foreground mb-4">
-                    We offer a wide range of {categories[selectedCategory].name.toLowerCase()} from trusted
-                    manufacturers with warranty and after-sales service.
+                    We offer a wide range of{" "}
+                    {categories[selectedCategory].name.toLowerCase()} from
+                    trusted manufacturers with warranty and after-sales service.
                   </p>
                   <div className="text-center">
                     <Button
                       onClick={() => {
-                        setSelectedCategory(null)
+                        setSelectedCategory(null);
                         toast.success(
-                          `You've selected ${categories[selectedCategory].name} category. Contact us for more details.`,
-                        )
-                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                          `You've selected ${categories[selectedCategory].name} category. Contact us for more details.`
+                        );
+                        document
+                          .getElementById("contact")
+                          ?.scrollIntoView({ behavior: "smooth" });
                       }}
                     >
                       Contact Us For More Details
@@ -142,6 +192,5 @@ export default function ProductCategories() {
         </DialogContent>
       </Dialog>
     </section>
-  )
+  );
 }
-

@@ -1,16 +1,17 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import { ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Om Krishi Machinery - Agricultural Equipment & Tools Supplier in Nepal",
+  title:
+    "Om Krishi Machinery - Agricultural Equipment & Tools Supplier in Nepal",
   description:
     "Leading supplier of agricultural machinery, carpentry tools, plumbing solutions, solar panels, and electrical equipment in Nepal. Sales, repair services, and spare parts available.",
   keywords: [
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
       "One-stop solution for agricultural machinery, carpentry tools, plumbing equipment, solar systems, and electrical supplies in Nepal.",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Om%20logo%20png-axCoetxv1cvCwdzIY3mSfKA2r8joZi.png",
+        url: "/Om logo png.png",
         width: 1200,
         height: 630,
         alt: "Om Krishi Machinery Logo",
@@ -71,13 +72,13 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-    generator: 'v0.dev'
-}
+  generator: "nischal",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -114,11 +115,21 @@ export default function RootLayout({
               },
               openingHoursSpecification: {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                opens: "09:00",
+                dayOfWeek: [
+                  "Sunday",
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "07:00",
                 closes: "18:00",
               },
-              sameAs: ["https://facebook.com/omkrishimachinery", "https://instagram.com/omkrishimachinery"],
+              sameAs: [
+                "https://facebook.com/omkrishimachinery",
+                "https://instagram.com/omkrishimachinery",
+              ],
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
                 name: "Products and Services",
@@ -194,7 +205,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <ToastContainer
-          position="top-center"
+          position="top-right"
           autoClose={3000}
           hideProgressBar={false}
           newestOnTop
@@ -207,9 +218,7 @@ export default function RootLayout({
         />
       </body>
     </html>
-  )
+  );
 }
 
-
-
-import './globals.css'
+import "./globals.css";

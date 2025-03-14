@@ -3,8 +3,7 @@ export const productData = [
   {
     id: "prod-001",
     name: "Electric Grass Cutter",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/electric%20grass%20cutter-UVCJ5luhI8pCWH18pV08lj9T6Nf0oZ.png",
+    image: "/electric grass cutter.png",
     price: "Rs. 12,500",
     isNew: true,
     rating: 4.7,
@@ -33,8 +32,7 @@ export const productData = [
   {
     id: "prod-002",
     name: "Chainsaw",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/man-with-chainsaw-cutting-tree-t-xDGD2MUB4o1XjisULj9hAf81LkHKYH.png",
+    image: "/man-with-chainsaw-cutting-tree-t.png",
     price: "Rs. 18,900",
     isPopular: true,
     rating: 4.8,
@@ -63,7 +61,7 @@ export const productData = [
   {
     id: "prod-003",
     name: "Corn Mill",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/corn%20mill-uyCKbcUK1FjtPWrtkloS9fDbxOcgRx.png",
+    image: "/corn mill.png",
     price: "Rs. 22,000",
     rating: 4.5,
     reviews: 38,
@@ -91,7 +89,7 @@ export const productData = [
   {
     id: "prod-004",
     name: "Tiller",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tiller-g2CmcKyUGSWLDy6xg282v3J4VsJK7F.png",
+    image: "/tiller.png",
     price: "Rs. 45,000",
     isNew: true,
     rating: 4.9,
@@ -122,7 +120,7 @@ export const productData = [
   {
     id: "prod-005",
     name: "Router",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Router-TRqJOHKIXP4QV2BgkSDSI5VuoEB9Ki.png",
+    image: "/Router.png",
     price: "Rs. 12,000",
     rating: 4.6,
     reviews: 38,
@@ -148,12 +146,13 @@ export const productData = [
   {
     id: "prod-006",
     name: "Planer",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pleansure-9Fq7Vu0ERDBHkkuma4G5tdkB4JvRIC.png",
+    image: "/pleansure.png",
     price: "Rs. 9,800",
     isNew: true,
     rating: 4.7,
     reviews: 29,
-    description: "High-performance electric planer for smooth and precise woodworking.",
+    description:
+      "High-performance electric planer for smooth and precise woodworking.",
     features: [
       "Powerful 900W motor",
       "Adjustable cutting depth",
@@ -174,11 +173,12 @@ export const productData = [
   {
     id: "prod-007",
     name: "Drill Machine",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/drill%20machine-DMWrDm8aH8in60am7O7cDOd05VpjQF.png", // Updated drill machine image
+    image: "/drill machine.png", // Updated drill machine image
     price: "Rs. 8,500",
     rating: 4.5,
     reviews: 45,
-    description: "Professional-grade drill machine with variable speed control and hammer function.",
+    description:
+      "Professional-grade drill machine with variable speed control and hammer function.",
     features: [
       "850W powerful motor",
       "Variable speed control",
@@ -199,12 +199,12 @@ export const productData = [
   {
     id: "prod-008",
     name: "Marble Cutter",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/marble%20cutter.jpg-Uk6wVFE1CvKliEOiktV3h5NTlylt21.jpeg",
+    image: "/marble cutter.jpg",
     price: "Rs. 7,500",
     rating: 4.6,
     reviews: 33,
-    description: "Professional marble cutter with high-speed motor and water cooling system.",
+    description:
+      "Professional marble cutter with high-speed motor and water cooling system.",
     features: [
       "1300W powerful motor",
       "125mm diamond cutting disc",
@@ -227,12 +227,12 @@ export const productData = [
   {
     id: "prod-010",
     name: "Pipe Connectors",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pipe%20connector.jpg-gfmu3Gd3TG6kfGIwV1VHsB8bN26e18.jpeg", // Updated pipe connectors image
+    image: "/pipe connector.jpg", // Updated pipe connectors image
     price: "Rs. 450",
     rating: 4.4,
     reviews: 52,
-    description: "High-quality pipe connectors for plumbing and irrigation systems made from durable materials.",
+    description:
+      "High-quality pipe connectors for plumbing and irrigation systems made from durable materials.",
     features: [
       "Made from durable PVC material",
       "Available in various sizes",
@@ -253,7 +253,7 @@ export const productData = [
   {
     id: "prod-011",
     name: "Sprinkler System",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sprinkler-IS4uKyP5RX60cZxt0vgVV4wap32TIz.png",
+    image: "/sprinkler.png",
     price: "Rs. 8,500",
     isNew: true,
     rating: 4.7,
@@ -281,11 +281,12 @@ export const productData = [
   {
     id: "prod-012",
     name: "Drip Irrigation Kit",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/irrigation-g6pAHyFQa8rPfAKj9n9PUkEKF45M8V.png",
+    image: "/irrigation.png",
     price: "Rs. 6,500",
     rating: 4.8,
     reviews: 29,
-    description: "Complete drip irrigation kit for efficient water usage in gardens and farms.",
+    description:
+      "Complete drip irrigation kit for efficient water usage in gardens and farms.",
     features: [
       "Covers up to 1000 square feet of garden area",
       "Water-saving design reduces consumption by up to 70%",
@@ -308,12 +309,13 @@ export const productData = [
   {
     id: "prod-013",
     name: "Solar Panel 150W",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled-XOMGqWFCSKHAuNkiM0X3H6TDuOy8W2.png", // Updated solar panel image
+    image: "/Untitled.png", // Updated solar panel image
     price: "Rs. 18,000",
     isNew: true,
     rating: 4.9,
     reviews: 42,
-    description: "High-efficiency 150W solar panel for sustainable energy generation.",
+    description:
+      "High-efficiency 150W solar panel for sustainable energy generation.",
     features: [
       "150W monocrystalline solar panel with 21% efficiency",
       "Tempered glass with anti-reflective coating",
@@ -335,7 +337,7 @@ export const productData = [
   {
     id: "prod-014",
     name: "Solar Battery",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/battrey-BAkC3U6zbRBW0dADPMoKGlPgLShwXF.png",
+    image: "/battrey.png",
     price: "Rs. 22,500",
     rating: 4.8,
     reviews: 36,
@@ -362,11 +364,12 @@ export const productData = [
   {
     id: "prod-015",
     name: "Solar Inverter",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/inverters-qh55RXUtvBBKj4C7AUukcUseMLJKar.png",
+    image: "/inverters.png",
     price: "Rs. 15,800",
     rating: 4.7,
     reviews: 28,
-    description: "Pure sine wave solar inverter for converting DC power from solar panels to AC power.",
+    description:
+      "Pure sine wave solar inverter for converting DC power from solar panels to AC power.",
     features: [
       "1000W pure sine wave output for sensitive electronics",
       "Built-in MPPT charge controller for efficient charging",
@@ -388,7 +391,7 @@ export const productData = [
   {
     id: "prod-009",
     name: "Solar Water Pump",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/water%20pump-6vLQqxgpxTs4QWYQqkiPKIJ0JW1rLh.png", // Updated water pump image
+    image: "/water pump.png", // Updated water pump image
     price: "Rs. 35,000",
     rating: 4.6,
     reviews: 45,
@@ -412,32 +415,4 @@ export const productData = [
     availability: "In Stock",
     category: "solar", // Changed category to solar
   },
-  {
-    id: "prod-016",
-    name: "Solar Water Pump",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/solar-water-pump-Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9Yd9.jpg",
-    price: "Rs. 35,000",
-    isPopular: true,
-    rating: 4.6,
-    reviews: 22,
-    description: "Solar-powered water pump for irrigation and water supply in remote locations.",
-    features: [
-      "Direct solar-powered operation without batteries",
-      "Submersible design for deep well applications",
-      "Maximum flow rate of 3000L/hour",
-      "Includes solar panel and controller",
-      "No electricity costs for operation",
-    ],
-    specifications: {
-      Power: "300W",
-      "Maximum Flow Rate": "3000L/hour",
-      "Maximum Head": "30m",
-      "Solar Panel": "2 x 150W panels included",
-      Warranty: "2 years",
-    },
-    availability: "In Stock",
-    category: "solar",
-  },
-]
-
+];

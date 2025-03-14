@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronDown } from "lucide-react"
-import { scrollToSection } from "@/lib/utils"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { scrollToSection } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
@@ -12,10 +12,9 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop"
+          src="/hero-image.png"
           alt="Agricultural machinery in Nepal"
           className="w-full h-full object-cover"
-          priority="true"
         />
       </div>
 
@@ -49,8 +48,9 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            From advanced farming equipment to solar solutions, we provide high-quality machinery and expert services to
-            boost agricultural productivity across Nepal.
+            From advanced farming equipment to solar solutions, we provide
+            high-quality machinery and expert services to boost agricultural
+            productivity across Nepal.
           </motion.p>
 
           <motion.div
@@ -101,10 +101,16 @@ export default function HeroSection() {
                 />
               </div>
               <div className="text-white">
-                <p className="font-medium">Trusted by 500+ farmers across Nepal</p>
+                <p className="font-medium">
+                  Trusted by 500+ farmers across Nepal
+                </p>
                 <div className="flex items-center mt-1">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                    <svg
+                      key={i}
+                      className="w-4 h-4 text-yellow-400 fill-current"
+                      viewBox="0 0 24 24"
+                    >
                       <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                     </svg>
                   ))}
@@ -136,6 +142,5 @@ export default function HeroSection() {
         </button>
       </motion.div>
     </section>
-  )
+  );
 }
-

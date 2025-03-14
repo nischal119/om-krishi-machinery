@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,16 +10,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { useToast } from "@/hooks/use-toast"
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 interface QuoteFormProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export default function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
@@ -30,31 +30,34 @@ export default function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
     company: "",
     productInterest: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { toast } = useToast()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      setIsSubmitting(false)
-      onClose()
+      setIsSubmitting(false);
+      onClose();
 
       toast({
         title: "Quote Request Submitted",
-        description: "We've received your request and will get back to you with a quote shortly.",
-      })
-    }, 1500)
-  }
+        description:
+          "We've received your request and will get back to you with a quote shortly.",
+      });
+    }, 1500);
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -62,7 +65,8 @@ export default function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
         <DialogHeader>
           <DialogTitle>Request a Quote</DialogTitle>
           <DialogDescription>
-            Fill out this form to receive a personalized quote for our products and services.
+            Fill out this form to receive a personalized quote for our products
+            and services.
           </DialogDescription>
         </DialogHeader>
 
@@ -119,7 +123,9 @@ export default function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="productInterest">Products/Services of Interest</Label>
+              <Label htmlFor="productInterest">
+                Products/Services of Interest
+              </Label>
               <Input
                 id="productInterest"
                 name="productInterest"
@@ -154,6 +160,5 @@ export default function QuoteForm({ isOpen, onClose }: QuoteFormProps) {
         </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
-

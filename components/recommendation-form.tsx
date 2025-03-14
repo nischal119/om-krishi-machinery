@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,20 +10,29 @@ import {
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useToast } from "@/hooks/use-toast"
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 interface RecommendationFormProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export default function RecommendationForm({ isOpen, onClose }: RecommendationFormProps) {
+export default function RecommendationForm({
+  isOpen,
+  onClose,
+}: RecommendationFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,35 +41,38 @@ export default function RecommendationForm({ isOpen, onClose }: RecommendationFo
     cropType: "",
     budget: "",
     requirements: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { toast } = useToast()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSelectChange = (name: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      setIsSubmitting(false)
-      onClose()
+      setIsSubmitting(false);
+      onClose();
 
       toast({
         title: "Recommendation Request Submitted",
-        description: "Our experts will contact you soon with personalized product recommendations.",
-      })
-    }, 1500)
-  }
+        description:
+          "Our experts will contact you soon with personalized product recommendations.",
+      });
+    }, 1500);
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -68,7 +80,8 @@ export default function RecommendationForm({ isOpen, onClose }: RecommendationFo
         <DialogHeader>
           <DialogTitle>Get Product Recommendations</DialogTitle>
           <DialogDescription>
-            Fill out this form to receive personalized product recommendations from our agricultural experts.
+            Fill out this form to receive personalized product recommendations
+            from our agricultural experts.
           </DialogDescription>
         </DialogHeader>
 
@@ -116,21 +129,35 @@ export default function RecommendationForm({ isOpen, onClose }: RecommendationFo
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="farmSize">Farm Size</Label>
-                <Select onValueChange={(value) => handleSelectChange("farmSize", value)} required>
+                <Select
+                  onValueChange={(value) =>
+                    handleSelectChange("farmSize", value)
+                  }
+                  required
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select farm size" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="small">Small (Less than 1 acre)</SelectItem>
+                    <SelectItem value="small">
+                      Small (Less than 1 acre)
+                    </SelectItem>
                     <SelectItem value="medium">Medium (1-5 acres)</SelectItem>
-                    <SelectItem value="large">Large (More than 5 acres)</SelectItem>
+                    <SelectItem value="large">
+                      Large (More than 5 acres)
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="cropType">Primary Crop Type</Label>
-                <Select onValueChange={(value) => handleSelectChange("cropType", value)} required>
+                <Select
+                  onValueChange={(value) =>
+                    handleSelectChange("cropType", value)
+                  }
+                  required
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Select crop type" />
                   </SelectTrigger>
@@ -148,7 +175,10 @@ export default function RecommendationForm({ isOpen, onClose }: RecommendationFo
 
             <div className="space-y-2">
               <Label htmlFor="budget">Budget Range (in Rs.)</Label>
-              <Select onValueChange={(value) => handleSelectChange("budget", value)} required>
+              <Select
+                onValueChange={(value) => handleSelectChange("budget", value)}
+                required
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Select budget range" />
                 </SelectTrigger>
@@ -185,6 +215,5 @@ export default function RecommendationForm({ isOpen, onClose }: RecommendationFo
         </form>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
-
