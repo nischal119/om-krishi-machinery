@@ -1,0 +1,31 @@
+{
+  "name": "Om Krishi Machinery",
+  "short_name": "Om Krishi",
+  "description": "Agricultural machinery and tools supplier in Budhabare, Nepal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "categories": ["business", "shopping", "agriculture"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "orientation": "any",
+  "scope": "/",
+  "serviceworker": {
+    "src": "/service-worker.js"
+  }
+}

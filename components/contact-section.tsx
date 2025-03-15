@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
-import { toast } from "react-toastify"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { toast } from "react-toastify";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -17,30 +17,37 @@ export default function ContactSection() {
     email: "",
     phone: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [showSuccessDialog, setShowSuccessDialog] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      setIsSubmitting(false)
-      setShowSuccessDialog(true)
-      toast.success("Thank you for your message! We'll get back to you soon.")
-    }, 1500)
-  }
+      setIsSubmitting(false);
+      setShowSuccessDialog(true);
+      toast.success("Thank you for your message! We'll get back to you soon.");
+    }, 1500);
+  };
 
   return (
-    <section id="contact" className="section-padding">
+    <section
+      id="contact"
+      className="section-padding"
+      itemScope
+      itemType="https://schema.org/Organization"
+    >
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
@@ -73,7 +80,15 @@ export default function ContactSection() {
                     <MapPin className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-semibold">Address</h4>
-                      <p className="text-muted-foreground">School Chowk, Budhabare</p>
+                      <p
+                        className="text-muted-foreground"
+                        itemProp="address"
+                        itemScope
+                        itemType="https://schema.org/PostalAddress"
+                      >
+                        <span itemProp="streetAddress">School Chowk</span>,{" "}
+                        <span itemProp="addressLocality">Budhabare</span>
+                      </p>
                     </div>
                   </div>
 
@@ -81,8 +96,16 @@ export default function ContactSection() {
                     <Phone className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-semibold">Phone</h4>
-                      <p className="text-muted-foreground">023-555-205</p>
-                      <p className="text-muted-foreground">9852656612</p>
+                      <p className="text-muted-foreground">
+                        <a href="tel:+977-23-555-205" itemProp="telephone">
+                          023-555-205
+                        </a>
+                      </p>
+                      <p className="text-muted-foreground">
+                        <a href="tel:+977-9852656612" itemProp="telephone">
+                          9852656612
+                        </a>
+                      </p>
                     </div>
                   </div>
 
@@ -90,7 +113,14 @@ export default function ContactSection() {
                     <Mail className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-semibold">Email</h4>
-                      <p className="text-muted-foreground">info@omkrishimachinery.com.np</p>
+                      <p className="text-muted-foreground">
+                        <a
+                          href="mailto:info@omkrishimachinery.com.np"
+                          itemProp="email"
+                        >
+                          info@omkrishimachinery.com.np
+                        </a>
+                      </p>
                     </div>
                   </div>
 
@@ -98,8 +128,20 @@ export default function ContactSection() {
                     <Clock className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-semibold">Business Hours</h4>
-                      <p className="text-muted-foreground">Sun-Fri: 9AM - 6PM</p>
-                      <p className="text-muted-foreground">Sat: Closed</p>
+                      <p
+                        className="text-muted-foreground"
+                        itemProp="openingHours"
+                        content="Su-Fr 09:00-18:00"
+                      >
+                        Sun-Fri: 9AM - 6PM
+                      </p>
+                      <p
+                        className="text-muted-foreground"
+                        itemProp="openingHours"
+                        content="Sa 00:00-00:00"
+                      >
+                        Sat: Closed
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -114,7 +156,10 @@ export default function ContactSection() {
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-1"
+                    >
                       Your Name
                     </label>
                     <Input
@@ -128,7 +173,10 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-1"
+                    >
                       Email Address
                     </label>
                     <Input
@@ -143,7 +191,10 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-1">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium mb-1"
+                    >
                       Phone Number
                     </label>
                     <Input
@@ -156,7 +207,10 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-1"
+                    >
                       Your Message
                     </label>
                     <Textarea
@@ -170,7 +224,11 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
@@ -187,14 +245,17 @@ export default function ContactSection() {
             <div className="rounded-full bg-green-100 p-3 mb-4">
               <CheckCircle className="h-12 w-12 text-green-600" />
             </div>
-            <h2 className="text-2xl font-bold mb-2">Message Sent Successfully!</h2>
+            <h2 className="text-2xl font-bold mb-2">
+              Message Sent Successfully!
+            </h2>
             <p className="text-muted-foreground mb-6">
-              Thank you for contacting Om Krishi Machinery. We'll get back to you as soon as possible.
+              Thank you for contacting Om Krishi Machinery. We'll get back to
+              you as soon as possible.
             </p>
             <Button
               onClick={() => {
-                setShowSuccessDialog(false)
-                setFormData({ name: "", email: "", phone: "", message: "" })
+                setShowSuccessDialog(false);
+                setFormData({ name: "", email: "", phone: "", message: "" });
               }}
             >
               Close
@@ -203,6 +264,5 @@ export default function ContactSection() {
         </DialogContent>
       </Dialog>
     </section>
-  )
+  );
 }
-

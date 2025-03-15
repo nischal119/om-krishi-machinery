@@ -1,5 +1,15 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
+# Disallow crawling of admin pages
+User-agent: *
+Disallow: /admin/
+
+# Sitemap location
 Sitemap: https://omkrishimachinery.com.np/sitemap.xml
+
+# Crawl delay for all bots
+User-agent: *
+Crawl-delay: 10
 
