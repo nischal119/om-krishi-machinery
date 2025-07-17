@@ -1,9 +1,9 @@
-"use client"
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
-import { Button } from "@/components/ui/button"
+"use client";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-muted pt-16 pb-6">
@@ -12,22 +12,39 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Om Krishi Machinery</h3>
             <p className="text-muted-foreground mb-4">
-              Your trusted partner for agricultural machinery, tools, and services in Nepal.
+              Your trusted partner for agricultural machinery, tools, and
+              services in Nepal.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-primary">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-primary"
+              >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-primary">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-primary"
+              >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-primary">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-primary"
+              >
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full hover:text-primary">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:text-primary"
+              >
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
               </Button>
@@ -39,7 +56,11 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("home")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Home
@@ -47,7 +68,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Services
@@ -55,7 +80,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("products")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Products
@@ -63,7 +92,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("about")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   About Us
@@ -71,7 +104,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Contact
@@ -85,7 +122,11 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("products")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Agricultural Tools
@@ -93,7 +134,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("products")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Carpentry Tools
@@ -101,7 +146,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("products")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Plumbing & Irrigation
@@ -109,7 +158,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("products")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Solar Products
@@ -117,7 +170,11 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .getElementById("products")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Spare Parts
@@ -130,7 +187,6 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Contact Information</h3>
             <address className="not-italic text-muted-foreground">
               <p className="mb-2">School Chowk, Budhabare</p>
-              <p className="mb-2">Phone: 023-555-205, 9852656612</p>
               <p className="mb-2">Email: info@omkrishimachinery.com.np</p>
               <p>Business Hours: Sun-Fri, 9AM - 6PM</p>
             </address>
@@ -159,6 +215,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

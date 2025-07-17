@@ -96,16 +96,7 @@ export default function ContactSection() {
                     <Phone className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-semibold">Phone</h4>
-                      <p className="text-muted-foreground">
-                        <a href="tel:+977-23-555-205" itemProp="telephone">
-                          023-555-205
-                        </a>
-                      </p>
-                      <p className="text-muted-foreground">
-                        <a href="tel:+977-9852656612" itemProp="telephone">
-                          9852656612
-                        </a>
-                      </p>
+                      {/* Phone numbers removed as per request */}
                     </div>
                   </div>
 
